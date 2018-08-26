@@ -19,6 +19,10 @@ def get_coach_data(filename):
         print("Error: " + str(err))
         return(None)
 
+sarah = get_coach_data("sarah2.txt")
+(sarah_name,sarah_dob) = sarah.pop(0),sarah.pop(0)
+print(sarah_name + "'s fastest times are: " + str(sorted(set([sanitize(t) for t in sarah]))[0:3]))
+
 #Replaced for get_coach_data function
 """try:
 	
@@ -35,10 +39,11 @@ def get_coach_data(filename):
 		data = sarah_file.readline()
 		sarah = data.strip().split(',')"""
 
-james = get_coach_data("james.txt")
+#Commented to work with the v2 of the txt files(eg. sarah2.txt)
+"""james = get_coach_data("james.txt")
 julie = get_coach_data("julie.txt")
 mikey = get_coach_data("mikey.txt")
-sarah = get_coach_data("sarah.txt")
+sarah = get_coach_data("sarah.txt")"""
 
 #List comprehension used to sort and sanitize the lists
 #Changed for set factory function
@@ -93,7 +98,8 @@ sarah = get_coach_data("sarah.txt")
 	print(sorted([sanitize(t) for t in mikey]))
 	print(sorted([sanitize(t) for t in sarah]))"""
 	
-print(sorted(set([sanitize(t) for t in james]))[0:3])
+#Commented to work with the v2 of the txt files(eg. sarah2.txt)
+"""print(sorted(set([sanitize(t) for t in james]))[0:3])
 print(sorted(set([sanitize(t) for t in julie]))[0:3])
 print(sorted(set([sanitize(t) for t in mikey]))[0:3])
 print(sorted(set([sanitize(t) for t in sarah]))[0:3])
@@ -101,7 +107,7 @@ print(sorted(set([sanitize(t) for t in sarah]))[0:3])
 print(james)
 print(julie)
 print(mikey)
-print(sarah)
+print(sarah)"""
 
 #Removed and added in the get_coach_data function
 """except IOError as err:
